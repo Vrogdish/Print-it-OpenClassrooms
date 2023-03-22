@@ -17,6 +17,8 @@ const slides = [
 	}
 ]
 
+
+/** Récuperation des éléments du document */
 const image = document.querySelector(".banner-img");
 const text = document.querySelector(".banner, p");
 const arrowLeft = document.querySelector(".arrow_left");
@@ -24,9 +26,11 @@ const arrowRight = document.querySelector(".arrow_right");
 const dots = document.querySelector(".dots");
 
 
-
+/** Création d'un index du slide à afficher */
 let nbrOfActivSlide = 0;
 
+
+/** Fonction pour création des points d'apres le nombre de slide */
 function dotGenerator () {
 	for (let i in slides) {
 		const dotsElement = document.createElement("div");
@@ -38,15 +42,19 @@ function dotGenerator () {
 	}
 	}
 
+
+/** Fonction pour defilement du slide */
 function slideGenerator (){
 	image.setAttribute("src", `./assets/images/slideshow/${slides[nbrOfActivSlide].image}`);
-	console.log(image)
 	text.innerHTML = slides[nbrOfActivSlide].tagLine
 }
 
 
+/** Initialisation de l affichage du point */
 dotGenerator ()
 
+
+//** Mise en place des actions à effectuer au clic sur les chevrons */
 arrowLeft.addEventListener("click", function () {
 	nbrOfActivSlide --;
 
@@ -58,7 +66,6 @@ arrowLeft.addEventListener("click", function () {
 	dotGenerator ();
 	slideGenerator();
 })
-
 
 arrowRight.addEventListener("click", function () {
 	nbrOfActivSlide ++;
