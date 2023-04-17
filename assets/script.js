@@ -31,7 +31,7 @@ let nbrOfActivSlide = 0;
 
 
 /** Fonction pour création des points d'apres le nombre de slide */
-function dotGenerator () {
+const dotGenerator = () => {
 	for (let i in slides) {
 		const dotsElement = document.createElement("div");
 		dotsElement.classList.add("dot")
@@ -44,7 +44,7 @@ function dotGenerator () {
 
 
 /** Fonction pour defilement du slide */
-function slideGenerator (){
+const slideGenerator = () => {
 	image.setAttribute("src", `./assets/images/slideshow/${slides[nbrOfActivSlide].image}`);
 	text.innerHTML = slides[nbrOfActivSlide].tagLine
 }
